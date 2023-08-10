@@ -8,3 +8,10 @@ def homepage(request):
 def about(request, author_no=0):
     html = "<h2>Here is No:{}'s about page!</h2><hr>".format(author_no)
     return HttpResponse(html)
+
+def company(request):
+    return HttpResponse("My Company")
+def sales(request):
+    return HttpResponse("My Sales")
+def contact(request):
+    return HttpResponse("My Contact")

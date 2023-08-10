@@ -16,10 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from mysite import views
+from django.conf.urls import include
+
+my_patterns = [
+    path('company/', views.company),
+    path('sales/', views.sales),
+    path('contact/', views.contact),
+]
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homepage),
     path('about/', views.about),
     path('about/<int:author_no>', views.about),
+    path('info/', include(my_patterns)),
 ]
+
