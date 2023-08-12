@@ -29,6 +29,11 @@ urlpatterns = [
     path('', views.homepage),
     path('about/', views.about),
     path('about/<int:author_no>', views.about),
+
     path('info/', include(my_patterns)),
+
+    path('list/<int:yr>/<int:mon>/<int:day>/', views.listing,name='list-url'),
+    path('post/<int:yr>/<int:mon>/<int:day>/<int:post_num>/', views.post , name='post-url'),
+    path('post2/<int:yr>/<int:mon>/<int:day>/<int:post_num>/', views.post2, name='post-url-2'),
 ]
 
